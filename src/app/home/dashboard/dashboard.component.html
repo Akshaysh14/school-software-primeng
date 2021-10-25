@@ -1,0 +1,37 @@
+<!-- <div class="grid">
+    <div class="col-6 col-offset-3">
+        <form>
+            <input type="text" pInputText class="p-inputtext-sm">
+            <p-button label="Add Todo" (click)="addTodo()"></p-button>
+        </form>
+    </div>
+</div> -->
+
+<!-- <p-card [style]="{width: '360px'}" styleClass="p-card-shadow">
+    <form>
+        <div class="flex justify-content-center align-items-center" style="height: 100vh;">
+            <input type="text" pInputText class="p-inputtext-sm">
+            <p-button label="Add Todo" (click)="addTodo()"></p-button> -->
+<!-- <p-megaMenu [model]="items" orientation="vertical"></p-megaMenu> -->
+<!-- <div class="card"></div>
+        </div>
+    </form>
+</p-card> -->
+
+
+<div class="auth-wrapper">
+    <p-card [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <h1 class="text-center">Todo List</h1>
+        <ng-template pTemplate="body">
+            <form class="text-center mb-5">
+                <input type="text" pInputText class="p-inputtext-sm" [(ngModel)]="data.task" name="task">
+                <p-button label="Add Todo" (click)="addTodo()"></p-button>
+            </form>
+            <ul class="pb-5" *ngIf="getTodo$ | async as getTodo">
+                <li *ngFor="let todo of getTodo.results; let i = index">{{i+1}}. | {{todo.task}}</li>
+            </ul>
+            <!-- <p-listbox [options]="getTodo.results" [(ngModel)]="data.task" [optionLabel]="todo.task">
+            </p-listbox> -->
+        </ng-template>
+    </p-card>
+</div>
