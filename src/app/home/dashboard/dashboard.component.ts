@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TodoService } from 'src/app/service/todo.service';
+import { Todo, TodoService } from 'src/app/service/todo.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -31,6 +31,13 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  getTodo$ = this.todoService.getTodo$;
+  save(checked: boolean, todo: Todo) {
+    todo.completed = checked;
+    this.todoService.patchTodo(todo);
+  }
+
+  getTodo$ = this.todoService.todo$;
+
+  checked: boolean = false;
 
 }

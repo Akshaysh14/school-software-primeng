@@ -14,6 +14,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ListboxModule } from 'primeng/listbox';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ListboxModule } from 'primeng/listbox';
     ButtonModule,
     InputTextModule,
     MegaMenuModule,
-    ListboxModule
+    ListboxModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,7 +28,11 @@
                 <p-button label="Add Todo" (click)="addTodo()"></p-button>
             </form>
             <ul class="pb-5" *ngIf="getTodo$ | async as getTodo">
-                <li *ngFor="let todo of getTodo.results; let i = index">{{i+1}}. | {{todo.task}}</li>
+                <li *ngFor="let todo of getTodo; let i = index">
+                    <p-checkbox [(ngModel)]="todo.completed" [binary]="true" inputId="binary" #todoList
+                        (change)="save(todoList.checked, todo)"></p-checkbox>
+                    {{i+1}}. | {{todo.task}}
+                </li>
             </ul>
             <!-- <p-listbox [options]="getTodo.results" [(ngModel)]="data.task" [optionLabel]="todo.task">
             </p-listbox> -->
