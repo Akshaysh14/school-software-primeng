@@ -15,13 +15,15 @@ import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ListboxModule } from 'primeng/listbox';
 import { CheckboxModule } from 'primeng/checkbox';
+import { PaginationComponent } from './home/dashboard/pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
